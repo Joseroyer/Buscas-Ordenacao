@@ -52,7 +52,7 @@ int buscaExaustiva(int vet[], int TL, int elem)
 int menu()
 {
     int num;
-    printf("*** MENU DE OPCOES ***\n");
+    printf("\n*** MENU DE OPCOES ***\n");
     printf("1- Le Vetor\n");
     printf("2- Busca Exaustiva:\n");
     printf("3- Busca Exaustiva com Sentinela:\n");
@@ -76,6 +76,15 @@ int main()
             LeVetor(vet, TL);
             break;
         case 2:
+            printf("Digite o valor que deseja buscar?\n");
+            scanf("%d", &num);
+            if (buscaExaustiva(vet, TL, num) == -1)
+            {
+                printf("\nElemento nao encontrado!\n");
+            }
+            else
+                printf("\nElemento %d encontrado\n", num);
+            getch();
             break;
         case 3:
             break;
