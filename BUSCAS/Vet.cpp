@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <windows.h>
 #include <ctype.h>
-#define TF 100
+#define TF 6
 
 //& por referencia, atualiza o valor
 // por valor, faz a copia
@@ -23,9 +23,16 @@ void LeVetor(int vet[TF], int &TL)
 }
 void Exibir(int vet[TF], int TL)
 {
-    for (TL = 0; TL < TF; TL++)
+    if (vet[TL - 1] == 0)
     {
-        printf("%d \n", vet[TL]);
+        printf("VETOR VAZIO!\n");
+    }
+    else
+    {
+        for (TL = 0; TL < TF; TL++)
+        {
+            printf("%d \n", vet[TL]);
+        }
     }
 }
 
@@ -64,6 +71,7 @@ int main()
         case 5:
             break;
         case 6:
+            Exibir(vet, TL);
             break;
         }
 
