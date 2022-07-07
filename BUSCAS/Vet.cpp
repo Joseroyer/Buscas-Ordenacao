@@ -5,15 +5,16 @@
 #include <ctype.h>
 #define TF 6
 
-//& por referencia, atualiza o valor
-// por valor, faz a copia
+//& por referencia, atualiza o valor;
+// por valor, faz a copia;
 void LeVetor(int vet[TF], int &TL)
 {
     int Numero;
     printf("*** ENTRADA DE VALORES ***\n");
-    printf("Digite um numero:[%d]\n", TL);
+    printf("Elemento [%d]\n",TL);
+    printf("Digite um numero: \n");
     scanf("%d", &Numero);
-    while (TL < TF && Numero > 0)
+    while (TL < TF-1 && Numero > 0)
     {
         vet[TL] = Numero;
         TL++;
