@@ -21,20 +21,52 @@ void LeVetor(int vet[TF], int &TL)
         scanf("%d", &Numero);
     }
 }
-
-void menu()
+void Exibir(int vet[TF], int TL)
 {
-    printf("MENU DE OPCÕES\n");
-    printf("1- LE VETOR:\n");
+    for (TL = 0; TL < TF; TL++)
+    {
+        printf("%d \n", vet[TL]);
+    }
+}
+
+int menu()
+{
+    int num;
+    printf("*** MENU DE OPCOES ***\n");
+    printf("1- Le Vetor\n");
     printf("2- Busca Exaustiva:\n");
     printf("3- Busca Exaustiva com Sentinela:\n");
-
-    getch();
+    printf("4- Busca Sequencial indexada: \n");
+    printf("5- Busca Binaria: \n");
+    printf("6- Exibir Vetor: \n");
+    scanf("%d", &num);
+    return num;
 }
 
 int main()
 {
-    int num, vet[TF], TL;
+    int num, vet[TF], TL = 0, op;
 
+    do
+    {
+        op = menu();
+        switch (op)
+        {
+        case 1:
+            LeVetor(vet, TL);
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        case 6:
+            break;
+        }
+
+    } while (op != 27);
     return 0;
 }
