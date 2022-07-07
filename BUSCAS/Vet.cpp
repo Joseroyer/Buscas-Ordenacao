@@ -11,10 +11,10 @@ void LeVetor(int vet[TF], int &TL)
 {
     int Numero;
     printf("*** ENTRADA DE VALORES ***\n");
-    printf("Elemento [%d]\n",TL);
+    printf("Elemento [%d]\n", TL);
     printf("Digite um numero: \n");
     scanf("%d", &Numero);
-    while (TL < TF-1 && Numero > 0)
+    while (TL < TF - 1 && Numero > 0)
     {
         vet[TL] = Numero;
         TL++;
@@ -49,6 +49,19 @@ int buscaExaustiva(int vet[], int TL, int elem)
     else
         return -1;
 }
+int buscaExaustivaSentinela(int vet[], int TL, int elem)
+{
+    int i;
+    vet[TL] = elem;
+    while (elem != vet[i])
+    {
+        i++;
+    }
+    if (i < TL)
+        return i;
+    else
+        return -1;
+}
 
 int menu()
 {
@@ -77,18 +90,25 @@ int main()
             LeVetor(vet, TL);
             break;
         case 2:
+            printf("### BUSCA EXAUSTIVA ###\n");
             printf("Digite o valor que deseja buscar?\n");
             scanf("%d", &num);
             if (buscaExaustiva(vet, TL, num) == -1)
-            {
                 printf("\nElemento nao encontrado!\n");
-            }
             else
                 printf("\nElemento %d encontrado\n", num);
             getch();
             break;
         case 3:
+            printf("### BUSCA EXAUSTIVA COM SENTINELA ###\n");
+            printf("Digite o valor que deseja buscar?\n");
+            scanf("%d", &num);
+            if (buscaExaustivaSentinela(vet, TL, num) == -1)
+                printf("Elemento não encontrado!");
+            else
+                printf("Elemento encontrado %d", num);
             break;
+            getch();
         case 4:
             break;
         case 5:
