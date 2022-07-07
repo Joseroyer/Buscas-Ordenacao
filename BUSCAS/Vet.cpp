@@ -11,29 +11,42 @@ void LeVetor(int vet[TF], int &TL)
 {
     int Numero;
     printf("*** ENTRADA DE VALORES ***\n");
-    printf("Digite um numero: \n");
+    printf("Digite um numero:[%d]\n", TL);
     scanf("%d", &Numero);
     while (TL < TF && Numero > 0)
     {
         vet[TL] = Numero;
         TL++;
-        printf("Digite um numero: \n");
+        printf("Digite um numero:[%d]\n", TL);
         scanf("%d", &Numero);
     }
 }
-void Exibir(int vet[TF], int TL)
+void Exibir(int vet[], int TL)
 {
-    if (vet[TL - 1] == 0)
+    int i;
+    printf("\nConteudo do Vetor:\n");
+    if (TL == 0)
+        printf("\nVetor Vazio!\n");
+    else
+        for (i = 0; i < TL; i++)
+            printf("\nVetor[%d]: %d", i, vet[i]);
+
+    getch();
+}
+
+int buscaExaustiva(int vet[], int TL, int elem)
+{
+    int i = 0;
+    while (i < TL && vet[i] != elem)
     {
-        printf("VETOR VAZIO!\n");
+        i++;
+    }
+    if (i < TL) // achou
+    {
+        return i;
     }
     else
-    {
-        for (TL = 0; TL < TF; TL++)
-        {
-            printf("%d \n", vet[TL]);
-        }
-    }
+        return -1;
 }
 
 int menu()
