@@ -101,13 +101,17 @@ int buscaBinaria(int vet[], int TL, int elem)
 
 int verificaOrdenacao(int vet[], int TL)
 {
-    int i, flag = 0;
+    int i, cont = 0, flag = 0;
     for (i = 0; i < TL; i++)
     {
         if (vet[i] < vet[i + 1])
         {
-            flag = 1;
+            flag++;
         }
+    }
+    if (flag==TL-1)
+    {
+        flag=1;
     }
     return flag;
 }
