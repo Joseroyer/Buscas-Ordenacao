@@ -62,6 +62,20 @@ int buscaExaustivaSentinela(int vet[], int TL, int elem)
     else
         return -1;
 }
+int buscaSequencialIndexada(int vet[], int TL, int elem)
+{
+    int i = 0;
+    while (i < TL && elem > vet[i])
+    {
+        i++;
+    }
+    if (i < TL && elem == vet[i]) //achou
+    {
+        return i;
+    }
+    else
+        return -1;
+}
 
 int menu()
 {
