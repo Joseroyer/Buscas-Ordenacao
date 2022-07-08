@@ -29,9 +29,10 @@ void Exibir(int vet[], int TL)
     if (TL == 0)
         printf("\nVetor Vazio!\n");
     else
+    {
         for (i = 0; i < TL; i++)
             printf("\nVetor[%d]: %d", i, vet[i]);
-
+    }
     getch();
 }
 
@@ -51,7 +52,7 @@ int buscaExaustiva(int vet[], int TL, int elem)
 }
 int buscaExaustivaSentinela(int vet[], int TL, int elem)
 {
-    int i;
+    int i = 0;
     vet[TL] = elem;
     while (elem != vet[i])
     {
@@ -69,12 +70,49 @@ int buscaSequencialIndexada(int vet[], int TL, int elem)
     {
         i++;
     }
-    if (i < TL && elem == vet[i]) //achou
+    if (i < TL && elem == vet[i]) // achou
     {
         return i;
     }
     else
         return -1;
+}
+int buscaBinaria(int vet[], int TL, int elem)
+{
+    int inicio = 0, fim = TL - 1, meio;
+    meio = fim / 2;
+    while (inicio < fim && elem != vet[meio])
+    {
+        if (vet[meio] < elem)
+            inicio = meio + 1;
+        else
+        {
+            fim = meio;
+            meio = (inicio + fim) / 2;
+        }
+    }
+    if (elem == vet[meio])
+    {
+        return meio;
+    }
+    else
+        return -1;
+}
+
+int verificaOrdenacao(int vet[], int TL)
+{
+    int i, j, flag = 0;
+    for (i = 0; i < TL; i++)
+    {
+        for (j = i; i < TL; i++)
+        {
+            if (vet[i] > vet[j])
+            {
+                flag = 1;
+            }
+        }
+    }
+    return flag;
 }
 
 int menu()
@@ -97,6 +135,7 @@ int main()
 
     do
     {
+
         op = menu();
         switch (op)
         {
@@ -104,7 +143,7 @@ int main()
             LeVetor(vet, TL);
             break;
         case 2:
-            printf("### BUSCA EXAUSTIVA ###\n");
+            printf("\n### BUSCA EXAUSTIVA ###\n");
             printf("Digite o valor que deseja buscar?\n");
             scanf("%d", &num);
             if (buscaExaustiva(vet, TL, num) == -1)
@@ -114,24 +153,50 @@ int main()
             getch();
             break;
         case 3:
-            printf("### BUSCA EXAUSTIVA COM SENTINELA ###\n");
-            printf("Digite o valor que deseja buscar?\n");
-            scanf("%d", &num);
-            if (buscaExaustivaSentinela(vet, TL, num) == -1)
-                printf("Elemento não encontrado!");
+            printf("\n### BUSCA EXAUSTIVA COM SENTINELA ###\n");
+            if (verificaOrdenacao(vet, TL) == 1)
+            {
+                printf("Digite o valor que deseja buscar?\n");
+                scanf("%d", &num);
+                if (buscaExaustivaSentinela(vet, TL, num) == -1)
+                    printf("Elemento não encontrado!\n");
+                else
+                    printf("Elemento encontrado %d\n", num);
+            }
             else
-                printf("Elemento encontrado %d", num);
+                printf("Nao esta Ordenado\n");
+
             break;
             getch();
         case 4:
+            printf("\n### BUSCA SEQUENCIAL INDEXADA ###\n");
+            if (verificaOrdenacao(vet, TL) == 1)
+            {
+                printf("Digite o valor que deseja buscar?\n");
+                scanf("%d", &num);
+                if (buscaSequencialIndexada(vet, TL, num) == -1)
+                    printf("Elemento não encontrado!\n");
+                else
+                    printf("Elemento encontrado %d\n", num);
+            }
+            else
+                printf("Nao esta Ordenado\n");
             break;
+            getch();
         case 5:
+            printf("\n### BUSCA BINARIA ###\n");
+            printf("Digite o valor que deseja buscar?\n");
+            scanf("%d", &num);
+            if (buscaBinaria(vet, TL, num) == -1)
+                printf("Elemento não encontrado!\n");
+            else
+                printf("Elemento encontrado %d\n", num);
             break;
+            getch();
         case 6:
             Exibir(vet, TL);
             break;
         }
-
     } while (op != 27);
     return 0;
 }
