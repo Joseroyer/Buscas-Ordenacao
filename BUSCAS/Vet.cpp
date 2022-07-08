@@ -109,7 +109,7 @@ int verificaOrdenacao(int vet[], int TL)
             flag++;
         }
     }
-    if (flag==TL-1)
+    if (flag==TL)
     {
         flag=1;
     }
