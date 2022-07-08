@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <windows.h>
 #include <ctype.h>
-#define TF 6
+#define TF 100
 
 //& por referencia, atualiza o valor;
 // por valor, faz a copia;
@@ -14,7 +14,7 @@ void LeVetor(int vet[TF], int &TL)
     printf("Elemento [%d]\n", TL);
     printf("Digite um numero: \n");
     scanf("%d", &Numero);
-    while (TL < TF - 1 && Numero > 0)
+    while (TL < TF && Numero > 0)
     {
         vet[TL] = Numero;
         TL++;
@@ -101,15 +101,12 @@ int buscaBinaria(int vet[], int TL, int elem)
 
 int verificaOrdenacao(int vet[], int TL)
 {
-    int i, j, flag = 0;
+    int i, flag = 0;
     for (i = 0; i < TL; i++)
     {
-        for (j = i; i < TL; i++)
+        if (vet[i] < vet[i + 1])
         {
-            if (vet[i] > vet[j])
-            {
-                flag = 1;
-            }
+            flag = 1;
         }
     }
     return flag;
