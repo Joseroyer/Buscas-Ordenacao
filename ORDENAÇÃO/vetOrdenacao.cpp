@@ -32,9 +32,22 @@ void exibir(int vet[TF], int TL)
     {
         for (i = 0; i < TL; i++)
         {
-            printf("%d", vet[i]);
+            printf("%d \t", vet[i]);
         }
     }
+}
+
+void inserDireta(int vet[TF], int TL)
+{
+    int aux, p = TL - 1;
+    while (p > 0 && vet[p] < vet[p - 1])
+    {
+        aux = vet[p];
+        vet[p] = vet[p - 1];
+        vet[p - 1] = aux;
+        p--;
+    }
+    printf("ORDENAÇÃO CONCLUIDA!");
 }
 
 int menu()
@@ -45,11 +58,11 @@ int menu()
     printf("2- Insercao Direta (Insertion Sort): \n");
     printf("3- Ordenacao por Bolhas (Bubble Sort): \n");
     printf("4- Selecao Direta: \n");
-    printf("5- Busca Binaria: \n");
-    printf("6- Exibir Vetor: \n");
+    printf("5- Exibir Vetor: \n");
     scanf("%d", &num);
     return num;
 }
+
 int main()
 {
     int TL = 0, vet[TF], elem, op;
@@ -59,12 +72,18 @@ int main()
         switch (op)
         {
         case 1:
+
+            Levetor(vet, TL);
             break;
         case 2:
+            inserDireta(vet, TL);
             break;
         case 3:
             break;
         case 4:
+            break;
+        case 5:
+            exibir(vet, TL);
             break;
         }
     } while (op != 27);
