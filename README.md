@@ -10,6 +10,6 @@
 
 
 - Métodos de Ordenação
-  - Inserção Direta (Insertion Sort):
+  - Inserção Direta (Insertion Sort): Percorre-se os itens já ordenado da direita para esquerda, comparando cada item com aquele que vai ser inserido. Enquanto o item inserido for menor, o item que está sendo comparado se descola a direita.
   - Ordenação por Bolhas (Bubble Sorte):
   - Seleção Direta (Selection Sort).
