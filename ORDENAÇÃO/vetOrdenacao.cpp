@@ -47,7 +47,7 @@ void inserDireta(int vet[TF], int TL)
         vet[p - 1] = aux;
         p--;
     }
-    printf("ORDENAÇÃO CONCLUIDA!");
+    printf("ORDENACAO CONCLUIDA!");
 }
 
 int menu()
