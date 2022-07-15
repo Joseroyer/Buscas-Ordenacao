@@ -37,7 +37,7 @@ void exibir(int vet[TF], int TL)
     }
 }
 
-void inserDireta(int vet[TF], int TL)
+void inserDireta(int vet[TF], int TL) // da direita para esquerda
 {
     int aux, p = TL - 1;
     while (p > 0 && vet[p] < vet[p - 1])
@@ -48,6 +48,24 @@ void inserDireta(int vet[TF], int TL)
         p--;
     }
     printf("ORDENACAO CONCLUIDA!");
+}
+
+void Bubblesort(int vet[TF], int TL) // da esquerda para direita;
+{
+    int aux, a;
+    while (TL > 0)
+    {
+        for (a = 0; a < TL - 1; a++)
+        {
+            if (vet[a] > vet[a + 1])
+            {
+                aux = vet[a];
+                vet[a] = vet[a + 1];
+                vet[a + 1] = aux;
+            }
+        }
+        TL--;
+    }
 }
 
 int menu()
@@ -79,6 +97,7 @@ int main()
             inserDireta(vet, TL);
             break;
         case 3:
+            Bubblesort(vet, TL);
             break;
         case 4:
             break;
