@@ -1,4 +1,4 @@
-# Estudos
+# Buscas e Ordenação
 
 - Métodos de Busca
   - Desordenados: Pode estar em qualquer ordem.
