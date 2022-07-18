@@ -121,17 +121,19 @@ int main()
         switch (op)
         {
         case 1:
-
             Levetor(vet, TL);
             break;
         case 2:
             inserDireta(vet, TL);
+            printf("ORDENADO COM SUCESSO!\n");
             break;
         case 3:
             Bubblesort(vet, TL);
+            printf("ORDENADO COM SUCESSO!\n");
             break;
         case 4:
             selecaoDireta(vet, TL);
+            printf("ORDENADO COM SUCESSO!\n");
             break;
         case 5:
             exibir(vet, TL);
