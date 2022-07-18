@@ -13,6 +13,6 @@
   - Inserção Direta (Insertion Sort): Percorre-se os itens já ordenado da direita para esquerda, comparando cada item com aquele que vai ser inserido. Enquanto o item inserido for menor, o item que está sendo comparado se descola a direita.
   - Ordenação por Bolhas (Bubble Sorte): Efetua varreduras repetidas sobre o vetor, deslocando para sua extremidade a esquerda, o menor dos elementos.
   - Seleção Direta (Selection Sort): 
-        - 1º Passo: Encontrar o maior elemento da lista e sua posição.
-        - 2º Passo: Se a posição do maior elemento for menor que o tamanho do vetor, faz a troca, assim, coloca o maior elemento na última posição.
-        - 3º Passo: Decrementa o tamanho até que o tamanho for maior que 0. (TL > 0)
+    - 1º Passo: Encontrar o maior elemento da lista e sua posição.
+    - 2º Passo: Se a posição do maior elemento for menor que o tamanho do vetor, faz a troca, assim, coloca o maior elemento na última posição.
+    - 3º Passo: Decrementa o tamanho até que o tamanho for maior que 0. (TL > 0)
