@@ -68,6 +68,37 @@ void Bubblesort(int vet[TF], int TL) // da esquerda para direita;
     }
 }
 
+int posicaoMaior(int vet[TF], int TL)
+{
+    int i = 0, posMaior = 0, maior = 0;
+    while (i < TL)
+    {
+        if (vet[i] > maior)
+        {
+            maior = vet[i];
+            posMaior = i;
+        }
+        i++;
+    }
+    return posMaior;
+}
+
+void selecaoDireta(int vet[TF], int TL)
+{
+    int maior, posMaior;
+    while (TL > 0)
+    {
+        posMaior = posicaoMaior(vet, TL);
+        if (posMaior < TL - 1)
+        {
+            maior = vet[posMaior];
+            vet[posMaior] = vet[TL - 1];
+            vet[TL - 1] = maior;
+        }
+        TL--;
+    }
+}
+
 int menu()
 {
     int num;
@@ -100,6 +131,7 @@ int main()
             Bubblesort(vet, TL);
             break;
         case 4:
+            selecaoDireta(vet, TL);
             break;
         case 5:
             exibir(vet, TL);
