@@ -20,4 +20,4 @@
   
 ### Exclusão <h3>
   * **Exclusão Física:** A Física faz a remoção do registro.
-  * **Exculsão Lógica:** A Lógica utiliza uma coluna de status, se o statuso for ativo ele é true ou 1, senão é false ou 0 para inativo.
+  * **Exclusão Lógica:** A Lógica utiliza uma coluna de status, se o statuso for ativo ele é true ou 1, senão é false ou 0 para inativo.
