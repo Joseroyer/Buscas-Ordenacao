@@ -1,4 +1,4 @@
-# Buscas e Ordenação
+# Buscas, Ordenação e Exclusão
 
 - Métodos de Busca
   - Desordenados: Pode estar em qualquer ordem.
@@ -16,3 +16,5 @@
     - 1º Passo: Encontrar o maior elemento da lista e sua posição.
     - 2º Passo: Se a posição do maior elemento for menor que o tamanho do vetor, faz a troca, assim, coloca o maior elemento na última posição.
     - 3º Passo: Decrementa o tamanho até que o tamanho for maior que 0. (TL > 0)
+    
+ - Exclusão:
